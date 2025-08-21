@@ -1,0 +1,15 @@
+Flask
+Flask-CORS
+yfinance
+pandas
+numpy
+requests
+python-dotenv
+gunicorn
+crewai
+groq
+langchain
+langchain-groq
+duckduckgo-search
+beautifulsoup4
+lxml
