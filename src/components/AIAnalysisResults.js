@@ -4,7 +4,7 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Alert, AlertDescription } from './ui/alert';
-import { Loader2, TrendingUp, TrendingDown, Minus, FileText, BarChart3, Headphones } from './ui/icons';
+import { Loader2, TrendingUp, TrendingDown, Minus, FileText, BarChart3, Headphones, Megaphone } from './ui/icons';
 import { API_CONFIG } from '../config/api';
 
 const AIAnalysisResults = ({ portfolioData, onAnalysisComplete }) => {
@@ -139,19 +139,30 @@ const AIAnalysisResults = ({ portfolioData, onAnalysisComplete }) => {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-primary-400">
-          <BarChart3 className="w-5 h-5" />
-          AI Analysis Results
-        </CardTitle>
-        <p className="text-sm text-gray-300">
-          Last updated: {formatTimestamp(analysisResults.analysis_timestamp)}
-        </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="flex items-center gap-2 text-primary-400">
+              <BarChart3 className="w-5 h-5" />
+              AI Analysis Results
+            </CardTitle>
+            <p className="text-sm text-gray-300">
+              Last updated: {formatTimestamp(analysisResults.analysis_timestamp)}
+            </p>
+          </div>
+          <Button 
+            onClick={performAnalysis} 
+            className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            size="sm"
+          >
+            Refresh Analysis
+          </Button>
+        </div>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="headlines" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="headlines" className="flex items-center gap-2">
-              <Headphones className="w-4 h-4" />
+              <Megaphone className="w-4 h-4" />
               Headlines
             </TabsTrigger>
             <TabsTrigger value="news" className="flex items-center gap-2">
@@ -266,18 +277,18 @@ const AIAnalysisResults = ({ portfolioData, onAnalysisComplete }) => {
                 <CardContent className="space-y-4">
                   <div className="grid gap-3">
                     <div>
-                                             <h4 className="font-semibold mb-2 text-sm text-gray-300">Concise Headline</h4>
-                      <p className="text-lg font-medium text-white">{headline.headlines.concise}</p>
+                      <h4 className="font-semibold mb-2 text-sm text-gray-300">Breaking News</h4>
+                      <p className="text-lg font-medium text-red-400">{headline.headlines.breaking}</p>
                     </div>
                     
                     <div>
-                                             <h4 className="font-semibold mb-2 text-sm text-gray-300">Engaging Headline</h4>
-                      <p className="text-lg font-medium text-white">{headline.headlines.engaging}</p>
+                      <h4 className="font-semibold mb-2 text-sm text-gray-300">Analytical Insight</h4>
+                      <p className="text-lg font-medium text-blue-400">{headline.headlines.analytical}</p>
                     </div>
                     
                     <div>
-                                             <h4 className="font-semibold mb-2 text-sm text-gray-300">Detailed Headline</h4>
-                      <p className="text-lg font-medium text-white">{headline.headlines.detailed}</p>
+                      <h4 className="font-semibold mb-2 text-sm text-gray-300">Market Story</h4>
+                      <p className="text-lg font-medium text-green-400">{headline.headlines.storytelling}</p>
                     </div>
                   </div>
                   
@@ -303,12 +314,6 @@ const AIAnalysisResults = ({ portfolioData, onAnalysisComplete }) => {
             ))}
           </TabsContent>
         </Tabs>
-
-                 <div className="mt-6 pt-4 border-t border-gray-700">
-          <Button onClick={performAnalysis} variant="outline" className="w-full">
-            Refresh Analysis
-          </Button>
-        </div>
       </CardContent>
     </Card>
   );

@@ -499,7 +499,16 @@ const Dashboard = ({ onPageChange }) => {
           </div>
         </div>
 
-
+        {/* AI Analysis Results */}
+        <div className="mt-8 mb-8">
+          <AIAnalysisResults 
+            portfolioData={portfolioData}
+            onAnalysisComplete={(results) => {
+              console.log('AI Analysis completed:', results);
+              // You can store the results or trigger other actions here
+            }}
+          />
+        </div>
 
         {/* Holdings Table and Recommendations */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -691,17 +700,6 @@ const Dashboard = ({ onPageChange }) => {
               Projections based on historical performance and market conditions.
             </p>
           </div>
-        </div>
-
-        {/* AI Analysis Results */}
-        <div className="mt-8">
-          <AIAnalysisResults 
-            portfolioData={portfolioData}
-            onAnalysisComplete={(results) => {
-              console.log('AI Analysis completed:', results);
-              // You can store the results or trigger other actions here
-            }}
-          />
         </div>
       </div>
     </div>

@@ -66,12 +66,18 @@ class NewsAnalysisAgent:
         """Create the headline generation agent using CrewAI"""
         return Agent(
             role='Financial Headline Writer',
-            goal='Create compelling and accurate headlines from financial news content',
+            goal='Create compelling and accurate headlines from financial news content in three distinct styles',
             backstory="""You are an expert financial journalist and headline writer with 
             years of experience in creating engaging, accurate, and informative headlines 
-            for financial news. You understand what makes headlines compelling while 
-            maintaining journalistic integrity. You can create headlines that capture 
-            the essence of financial news and market movements.""",
+            for financial news. You specialize in three distinct headline styles:
+            
+            1. BREAKING NEWS: Urgent, time-sensitive headlines that grab immediate attention
+            2. ANALYTICAL INSIGHT: Data-driven headlines that provide market analysis
+            3. STORYTELLING: Narrative headlines that tell the broader market story
+            
+            You understand what makes each style compelling while maintaining journalistic 
+            integrity. You can adapt your writing to capture the essence of financial news 
+            and market movements in different ways for different audiences.""",
             verbose=True,
             allow_delegation=False,
             llm=self.llm
@@ -154,11 +160,27 @@ class NewsAnalysisAgent:
             
             News Data: {json.dumps(news_data, indent=2)}
             
-            For each stock in the news data:
-            1. Create a concise, factual headline (max 60 characters)
-            2. Create an engaging, attention-grabbing headline (max 80 characters)
-            3. Create a detailed, informative headline (max 100 characters)
-            4. Provide a brief summary and keywords
+            For each stock in the news data, create THREE DIFFERENT headline styles:
+            
+            1. BREAKING NEWS STYLE (max 10 words):
+               - Use urgent, time-sensitive language
+               - Focus on immediate market impact
+               - Use words like "BREAKING", "JUST IN", "ALERT"
+               - Example: "BREAKING: AAPL Hits New High"
+            
+            2. ANALYTICAL INSIGHT STYLE (max 10 words):
+               - Focus on analysis and implications
+               - Use data-driven language
+               - Include market context and trends
+               - Example: "AAPL Surges 5% on Strong iPhone Sales"
+            
+            3. STORYTELLING STYLE (max 10 words):
+               - Tell a narrative about the company/market
+               - Use engaging, descriptive language
+               - Include broader market context
+               - Example: "Apple's Innovation Strategy Drives Record Revenue Growth"
+            
+            4. Provide a brief summary and relevant keywords
             
             Return the results in this exact JSON format:
             {{
@@ -167,9 +189,9 @@ class NewsAnalysisAgent:
                     {{
                         "symbol": "STOCK_SYMBOL",
                         "headlines": {{
-                            "concise": "Short factual headline",
-                            "engaging": "Attention-grabbing headline",
-                            "detailed": "Comprehensive headline"
+                            "breaking": "Urgent breaking news headline",
+                            "analytical": "Data-driven analytical headline",
+                            "storytelling": "Narrative storytelling headline"
                         }},
                         "summary": "Brief summary",
                         "keywords": ["keyword1", "keyword2"]
