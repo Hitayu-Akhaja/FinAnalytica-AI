@@ -23,7 +23,7 @@ const Navbar = ({ onPageChange, currentPage }) => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <h1 className="text-2xl font-bold text-white">
-                <span className="text-primary-400">Financial</span>Analyst
+                <span className="text-primary-400">FinAnalytica</span> AI
               </h1>
             </div>
           </div>

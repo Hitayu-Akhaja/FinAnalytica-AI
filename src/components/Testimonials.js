@@ -20,7 +20,7 @@ const Testimonials = () => {
     },
     {
       name: "David Kim",
-      role: "Financial Analyst",
+              role: "FinAnalytica AI User",
       company: "Research Firm",
       rating: 5,
       content: "The AI-powered analysis feature is a game-changer. I can quickly get comprehensive insights about my portfolio holdings and make informed decisions based on advanced analytics.",

@@ -1,4 +1,4 @@
-# Financial Analyst - Advanced Portfolio Management & AI-Powered Analysis
+# FinAnalytica AI - Advanced Portfolio Management & AI-Powered Analysis
 
 A comprehensive financial analysis platform that combines modern React frontend with AI-powered backend services for portfolio management, stock analysis, and market insights. Built with React 18, Flask, and cutting-edge AI technologies including CrewAI and Groq.
 

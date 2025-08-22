@@ -384,7 +384,7 @@ CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "run:app"]
 
 ## 📝 License
 
-This project is part of the Financial Analyst application.
+This project is part of the FinAnalytica AI application.
 
 ## 🆘 Support
 

@@ -57,7 +57,7 @@ const Features = ({ onPageChange }) => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover the comprehensive suite of features that make Financial Analyst your complete investment research and portfolio management solution.
+            Discover the comprehensive suite of features that make FinAnalytica AI your complete investment research and portfolio management solution.
           </p>
         </div>
 

@@ -32,7 +32,7 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary-500 mx-auto mb-4"></div>
-          <h2 className="text-white text-xl font-semibold">Loading Financial Analyst...</h2>
+          <h2 className="text-white text-xl font-semibold">Loading FinAnalytica AI...</h2>
         </div>
       </div>
     );
