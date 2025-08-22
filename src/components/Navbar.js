@@ -29,7 +29,7 @@ const Navbar = ({ onPageChange, currentPage }) => {
           </div>
 
           {/* Desktop Navigation - Centered from logo end */}
-          <div className="hidden md:block flex-1 flex justify-start ml-40">
+          <div className="hidden md:flex flex-1 justify-start ml-40">
             <div className="flex items-baseline space-x-8">
               <button 
                 onClick={() => onPageChange('home')}
